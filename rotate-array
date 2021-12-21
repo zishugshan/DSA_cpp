@@ -1,0 +1,13 @@
+    void rotateArray(vector<int>& a ,int s,int e){
+        while(s<=e){
+            swap(a[e],a[s]);
+            s++;e--;
+        }
+    }
+    void rotate(vector<int>& nums, int k) {
+        int n = nums.size();
+        k=k%n;
+        rotateArray(nums,0,n-k-1);
+        rotateArray(nums,n-k,n-1);
+        rotateArray(nums,0,n-1);  
+    }
