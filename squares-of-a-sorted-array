@@ -1,0 +1,14 @@
+    vector<int> sortedSquares(vector<int>& nums) {
+        int n = nums.size();
+        int l = 0;
+        int r = n-1;
+        vector<int> v;
+        while(l<=r){
+            int big = max(abs(nums[l]),abs(nums[r]));
+            v.push_back(big*big);
+            if(big == abs(nums[l])) l++;
+            else r--;
+        }
+        reverse(v.begin(),v.end());
+        return v;
+    }
